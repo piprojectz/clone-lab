@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Clone Lab</string>
+    <string name="title_activity_main">Clone Lab</string>
+    <string name="package_name">com.debo.clonelab</string>
+    <string name="custom_url_scheme">com.debo.clonelab</string>
+</resources>

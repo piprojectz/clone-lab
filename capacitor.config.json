@@ -1,0 +1,11 @@
+{
+  "appId": "com.debo.clonelab",
+  "appName": "Clone Lab",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#161513"
+  },
+  "plugins": {
+    "SystemBars": { "insetsHandling": "native" }
+  }
+}

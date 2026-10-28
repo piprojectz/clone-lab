@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<title>Clone Lab</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div><h1>Clone Lab</h1></div>
+  <span class="sync ok" data-i18n="saved_device">Saved on this phone</span>
+  <div class="lang" role="group" data-i18n-aria="lang_label" aria-label="Language">
+    <button data-lang="en" aria-pressed="true">EN</button><button data-lang="ru" aria-pressed="false">RU</button>
+  </div>
+  <div class="listbar">
+    <label for="listSel" class="label" style="white-space:nowrap" data-i18n="planter_list">Planter list</label>
+    <select id="listSel"></select>
+    <button class="iconbtn" id="listMenuBtn" data-i18n="manage">Manage</button>
+  </div>
+</header>
+
+<main>
+  <section id="tab-clones" class="entry-grid">
+    <div id="exampleNotice"></div>
+    <div class="panel">
+      <div class="row" style="justify-content:space-between"><h2 data-i18n="add_clones">Add clones</h2><span class="label" id="countLbl"></span></div>
+      <p class="muted small" data-i18n="scan_help"></p>
+      <div class="row">
+        <button class="btn primary big" id="camBtn" data-i18n="scan_cam">Scan with camera</button>
+        <button class="btn big" id="picBtn" data-i18n="read_shots">Read screenshots</button>
+      </div>
+      <input type="file" id="picInput" accept="image/*" multiple hidden>
+      <div class="slots" id="slots" aria-live="polite"></div>
+      <div class="keypad" id="keypad">
+        <button class="k" data-k="G">G<span data-i18n="k_G">growth</span></button>
+        <button class="k" data-k="Y">Y<span data-i18n="k_Y">yield</span></button>
+        <button class="k" data-k="H">H<span data-i18n="k_H">hardy</span></button>
+        <button class="k r" data-k="W">W<span data-i18n="k_W">water</span></button>
+        <button class="k r" data-k="X">X<span data-i18n="k_X">empty</span></button>
+      </div>
+      <div class="keyrow"><button class="btn" id="kBack" data-i18n="back">⌫ Back</button><button class="btn ghost" id="kClear" data-i18n="clear">Clear</button></div>
+      <p class="muted small" data-i18n="keypad_help"></p>
+      <details>
+        <summary data-i18n="paste_title">Paste a list instead</summary>
+        <div style="display:grid;gap:8px;margin-top:10px">
+          <label for="pasteBox" class="muted small" data-i18n="paste_help"></label>
+          <textarea id="pasteBox" placeholder="GGYYHW&#10;YHHWWH&#10;XGYXYH"></textarea>
+          <div class="row"><button class="btn" id="pasteBtn" data-i18n="paste_btn">Add from text</button></div>
+        </div>
+      </details>
+    </div>
+    <div style="display:grid;gap:8px">
+      <div class="row" style="justify-content:space-between"><h3 data-i18n="your_clones">Your clones</h3>
+        <div class="row"><label for="sortSel" class="label" data-i18n="sort">Sort</label><select id="sortSel" style="flex:none;width:auto;padding:5px 8px;font-size:.85rem"><option value="new" data-i18n="sort_new">Newest</option><option value="num" data-i18n="sort_num">Number</option><option value="score" data-i18n="sort_score">Score</option></select></div></div>
+      <div class="clist" id="clist"></div>
+    </div>
+  </section>
+
+  <section id="tab-breed" hidden>
+    <div style="display:grid;gap:18px">
+    <div class="panel">
+      <h2 data-i18n="breed_toward">Breed toward</h2>
+      <div class="target" id="target"></div>
+      <div class="presets" id="presets"></div>
+      <p class="small" id="targetMsg"></p>
+      <div class="opts">
+        <div class="opt"><label for="kRange" class="label"><span data-i18n="max_plants">Surrounding plants (max)</span> · <span id="kVal" class="mono"></span></label><input type="range" id="kRange" min="2" max="6" step="1"></div>
+        <div class="opt" style="align-content:end"><label class="switch"><input type="checkbox" id="gen2Chk"> <span data-i18n="gen2">Look two generations ahead</span></label></div>
+      </div>
+      <div class="row"><button class="btn primary" id="calcBtn" style="flex:1" data-i18n="calc">Calculate</button></div>
+      <div class="progress" id="prog" hidden><i></i></div>
+    </div>
+    <div id="results" style="display:grid;gap:14px"></div>
+    </div>
+  </section>
+
+  <section id="tab-guide" hidden>
+    <div class="guide" id="guide"></div>
+  </section>
+</main>
+
+<nav class="tabs"><div role="tablist">
+  <button role="tab" data-tab="clones" aria-selected="true"><b data-i18n="tab_clones">Clones</b><span id="navCount"></span></button>
+  <button role="tab" data-tab="breed" aria-selected="false"><b data-i18n="tab_breed">Breed</b><span data-i18n="tab_breed_sub">find a god clone</span></button>
+  <button role="tab" data-tab="guide" aria-selected="false"><b data-i18n="tab_guide">How it works</b><span data-i18n="tab_guide_sub">genes &amp; order</span></button>
+</div></nav>
+
+<div id="camHost"></div>
+<div id="overlay"></div>
+<div id="toastHost"></div>
+
+<script src="i18n.js"></script>
+<script src="engine.js"></script>
+<script src="scanner.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

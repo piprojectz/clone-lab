@@ -1,0 +1,20 @@
+{
+  "name": "clone-lab",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Rust clone breeding planner with on-device gene scanning",
+  "scripts": {
+    "sync": "cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.5.3",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.3",
+    "@fontsource/barlow": "5.3.0",
+    "@fontsource/barlow-condensed": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0"
+  }
+}
