@@ -2,6 +2,17 @@
 
 Rust clone breeding planner. Everything runs on the phone: gene scanning (camera or screenshots), saved lists, breeding search, planting order.
 
+## Screenshots
+
+<p>
+  <img src="docs/screenshots/screen01.jpg" width="24%">
+  <img src="docs/screenshots/screen04.jpg" width="24%">
+  <img src="docs/screenshots/screen06.jpg" width="24%">
+  <img src="docs/screenshots/screen09.jpg" width="24%">
+</p>
+
+More in [docs/screenshots](docs/screenshots). Privacy policy: [Clone Lab Privacy Policy](https://sites.google.com/view/clonelab-privacy/home)
+
 ## Build the APK (Windows, Android Studio)
 
 1. Unzip this folder somewhere without spaces in the path, e.g. `C:\dev\clone-lab-app`.
